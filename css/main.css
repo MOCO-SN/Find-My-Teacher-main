@@ -1,0 +1,412 @@
+
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background-color: #7aba6d;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    header .logo img {
+      width: 70px;
+      border-radius: 20px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #d4fdd4;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 50px;
+      background-color: #ffffff;
+      animation: fadeIn 2s ease-out;
+      flex-wrap: wrap;
+    }
+
+    .hero .hero-content {
+      width: 50%;
+      min-width: 300px;
+    }
+
+    .hero .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+
+    .hero .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero .hero-content button {
+      padding: 10px 20px;
+      background-color: #22b70e;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .hero .hero-content button:hover {
+      background-color: #45a049;
+    }
+
+    .hero .hero-image img {
+      width: 400px;
+      max-width: 100%;
+      border-radius: 20px;
+      animation: slideIn 2s ease-out;
+    }
+
+    /* About Section */
+    .about {
+      padding: 50px;
+      background-color: #e2e2e2;
+      text-align: center;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .about h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Tutors Section */
+    .tutors {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .tutors h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+
+    .tutors p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto 40px;
+      color: #333;
+    }
+
+    .tutor-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tutor-card {
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .tutor-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .tutor-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .tutor-card h3 {
+      color: #2c662d;
+      margin-bottom: 10px;
+    }
+
+    .tutor-card p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .tutor-card a {
+      display: inline-block;
+      background-color: #22b70e;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    .tutor-card a:hover {
+      background-color: #45a049;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      padding: 60px 20px;
+      background-color: #ffffff;
+      text-align: center;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .gallery h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #2c662d;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .gallery-container img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 15px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .gallery-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Contact Section */
+    .contact {
+      padding: 50px;
+      background-color: #f5f5f5;
+      text-align: center;
+      animation: fadeIn 4s ease-out;
+    }
+
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .contact input,
+    .contact textarea {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    .contact button:hover {
+      background-color: #45a049;
+    }
+
+
+    /* Footer */
+    .site-footer {
+      background: linear-gradient(135deg, #2c662d 0%, #1a3d1a 100%);
+      color: white;
+      padding: 50px 20px 20px;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-section h3,
+    .footer-section h4 {
+      margin-bottom: 15px;
+      color: #7aba6d;
+    }
+
+    .footer-section p {
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.6;
+      margin-bottom: 10px;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .footer-section ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-section ul li a:hover {
+      color: #7aba6d;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      background: #7aba6d;
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.9rem;
+    }
+
+    /* Old footer style (kept for fallback) */
+    footer {
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(100%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+
+        /* Sign Up Section */
+    .signup {
+      padding: 50px;
+      background-color: #f5f5f5;
+      text-align: center;
+      animation: fadeIn 4s ease-out;
+    }
+    .signup h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #2c662d;
+    }
+    .signup form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .signup input,
+    .signup textarea {
+      width: 300px;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Find My Teacher</title>
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #7aba6d 0%, #4CAF50 100%);
+    }
+
+    .auth-card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      max-width: 500px;
+      width: 100%;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .auth-card h1 {
+      text-align: center;
+      color: #2c662d;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .auth-card .subtitle {
+      text-align: center;
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 15px;
+      border: 2px solid #e0e0e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .btn-register {
+      width: 100%;
+      padding: 15px;
+      background: linear-gradient(135deg, #22b70e 0%, #4CAF50 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn-register:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
+    }
+
+    .auth-footer {
+      text-align: center;
+      margin-top: 25px;
+      color: #666;
+    }
+
+    .auth-footer a {
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .auth-footer a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-center {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo-center img {
+      width: 80px;
+      border-radius: 15px;
+    }
+
+    .password-requirements {
+      font-size: 0.85rem;
+      color: #666;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo-center">
+        <img src="./assets/36adfee3-7844-4445-ac49-ccd6752ac52a.png" alt="Find My Teacher Logo">
+      </div>
+      <h1>Join Our Tutor Network</h1>
+      <p class="subtitle">Create your account and start teaching</p>
+
+      <form id="register-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name *</label>
+            <input type="text" id="firstName" name="firstName" required placeholder="Enter first name">
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name *</label>
+            <input type="text" id="lastName" name="lastName" required placeholder="Enter last name">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" required placeholder="+91 XXXXXXXXXX">
+        </div>
+
+        <div class="form-group">
+          <label for="subjects">Subjects You Teach *</label>
+          <select id="subjects" name="subjects" required>
+            <option value="">Select a subject</option>
+            <option value="mathematics">Mathematics</option>
+            <option value="science">Science (Physics/Chemistry/Biology)</option>
+            <option value="english">English</option>
+            <option value="hindi">Hindi</option>
+            <option value="sanskrit">Sanskrit</option>
+            <option value="social-studies">Social Studies</option>
+            <option value="computer">Computer Science</option>
+            <option value="urdu">Urdu/Arabic</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="qualification">Qualification *</label>
+            <input type="text" id="qualification" name="qualification" required placeholder="e.g., BSc, BEd">
+          </div>
+          <div class="form-group">
+            <label for="experience">Experience (Years)</label>
+            <input type="number" id="experience" name="experience" min="0" max="50" placeholder="0">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Your Location *</label>
+          <input type="text" id="location" name="location" required placeholder="City, Area">
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password *</label>
+          <input type="password" id="password" name="password" required placeholder="Create a strong password">
+          <p class="password-requirements">Must be at least 8 characters with numbers and letters</p>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password *</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Re-enter your password">
+        </div>
+
+        <button type="submit" class="btn-register">Create Account</button>
+      </form>
+
+      <div class="auth-footer">
+        <p>Already have an account? <a href="login.html">Sign In</a></p>
+        <p style="margin-top: 15px;"><a href="index.html">← Back to Home</a></p>
+        <p style="margin-top: 10px;"><a href="contact.html">Need Help? Contact Us</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('register-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      
+      if (password !== confirmPassword) {
+        alert('Passwords do not match. Please try again.');
+        return;
+      }
+      
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long.');
+        return;
+      }
+      
+      // Simulate registration success
+      alert('Registration successful! Welcome to Find My Teacher. You can now log in.');
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+
+</html>
