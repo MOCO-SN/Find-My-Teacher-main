@@ -382,6 +382,554 @@
       }
     }
 
+    /* Mobile Navigation - Hamburger Menu */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+      z-index: 1001;
+    }
+
+    .hamburger span {
+      width: 28px;
+      height: 3px;
+      background-color: white;
+      border-radius: 3px;
+      transition: all 0.3s ease;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(6px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* Responsive Styles - Tablets */
+    @media (max-width: 992px) {
+      header {
+        padding: 15px;
+      }
+
+      header .logo img {
+        width: 55px;
+      }
+
+      .hero {
+        padding: 30px;
+      }
+
+      .hero .hero-content {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero .hero-content h1 {
+        font-size: 2.2rem;
+      }
+
+      .hero .hero-image {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .hero .hero-image img {
+        width: 350px;
+      }
+
+      .about {
+        padding: 40px 20px;
+      }
+
+      .about h2 {
+        font-size: 2rem;
+      }
+
+      .about p {
+        font-size: 1.1rem;
+      }
+
+      .tutors {
+        padding: 40px 15px;
+      }
+
+      .tutors h2 {
+        font-size: 2rem;
+      }
+
+      .tutors > p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+      }
+
+      .tutor-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        padding: 0 10px;
+      }
+
+      .gallery {
+        padding: 40px 15px;
+      }
+
+      .gallery h2 {
+        font-size: 2rem;
+      }
+
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        padding: 0 10px;
+      }
+
+      .gallery-container img {
+        height: 200px;
+      }
+
+      .contact {
+        padding: 40px 20px;
+      }
+
+      .contact h2 {
+        font-size: 2rem;
+      }
+
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .signup {
+        padding: 40px 20px;
+      }
+
+      .signup h2 {
+        font-size: 2rem;
+      }
+
+      .signup input,
+      .signup textarea {
+        width: 100%;
+        max-width: 400px;
+      }
+
+      .site-footer {
+        padding: 40px 15px 15px;
+      }
+
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+      }
+
+      .main-heading {
+        font-size: 24px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        max-width: 700px;
+        height: 450px;
+      }
+    }
+
+    /* Responsive Styles - Mobile Phones */
+    @media (max-width: 768px) {
+      /* Header & Navigation */
+      header {
+        padding: 12px 15px;
+        position: relative;
+      }
+
+      header .logo img {
+        width: 50px;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: #2c662d;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+      }
+
+      nav.active {
+        right: 0;
+      }
+
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 15px 0;
+        width: 100%;
+        text-align: center;
+      }
+
+      nav ul li a {
+        display: block;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Mobile Overlay */
+      .nav-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+        display: none;
+      }
+
+      .nav-overlay.active {
+        display: block;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 20px 15px;
+        flex-direction: column;
+      }
+
+      .hero .hero-content {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero .hero-content h1 {
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+
+      .hero .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        padding: 0 5px;
+      }
+
+      .hero .hero-content button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      .hero .hero-image {
+        width: 100%;
+        margin-top: 25px;
+      }
+
+      .hero .hero-image img {
+        width: 100%;
+        max-width: 320px;
+        border-radius: 15px;
+      }
+
+      /* About Section */
+      .about {
+        padding: 30px 15px;
+      }
+
+      .about h2 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+      }
+
+      .about p {
+        font-size: 1rem;
+        line-height: 1.5;
+        text-align: left;
+        padding: 0 5px;
+      }
+
+      /* Tutors Section */
+      .tutors {
+        padding: 30px 10px;
+      }
+
+      .tutors h2 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+      }
+
+      .tutors > p {
+        font-size: 1rem;
+        line-height: 1.5;
+        padding: 0 10px;
+        margin-bottom: 30px;
+      }
+
+      .tutor-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 5px;
+      }
+
+      .tutor-card {
+        padding: 15px;
+        margin: 0 5px;
+      }
+
+      .tutor-card img {
+        height: 180px;
+      }
+
+      .tutor-card h3 {
+        font-size: 1.2rem;
+      }
+
+      .tutor-card p {
+        font-size: 0.95rem;
+      }
+
+      .tutor-card a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+      }
+
+      /* Gallery Section */
+      .gallery {
+        padding: 30px 10px;
+      }
+
+      .gallery h2 {
+        font-size: 1.7rem;
+        margin-bottom: 20px;
+      }
+
+      .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 0 5px;
+      }
+
+      .gallery-container img {
+        height: 200px;
+        border-radius: 10px;
+      }
+
+      /* Contact Section */
+      .contact {
+        padding: 30px 15px;
+      }
+
+      .contact h2 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+      }
+
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      .contact button {
+        padding: 12px 25px;
+        font-size: 1rem;
+      }
+
+      /* Signup Section */
+      .signup {
+        padding: 30px 15px;
+      }
+
+      .signup h2 {
+        font-size: 1.7rem;
+        margin-bottom: 15px;
+      }
+
+      .signup input,
+      .signup textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        font-size: 1rem;
+      }
+
+      /* Footer */
+      .site-footer {
+        padding: 30px 15px 15px;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        text-align: center;
+      }
+
+      .footer-section h3,
+      .footer-section h4 {
+        font-size: 1.2rem;
+      }
+
+      .footer-section p,
+      .footer-section ul li {
+        font-size: 0.95rem;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom {
+        font-size: 0.85rem;
+        padding-top: 15px;
+      }
+
+      /* Map Section */
+      .main-heading {
+        font-size: 20px;
+        margin: 15px 10px;
+      }
+
+      .map-container iframe {
+        width: 100%;
+        max-width: 350px;
+        height: 350px;
+      }
+
+      /* Rating in tutor cards */
+      .rating {
+        justify-content: center;
+      }
+    }
+
+    /* Extra Small Mobile Devices */
+    @media (max-width: 375px) {
+      header .logo img {
+        width: 45px;
+      }
+
+      .hero .hero-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero .hero-content p {
+        font-size: 0.9rem;
+      }
+
+      .hero .hero-content button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .about h2,
+      .tutors h2,
+      .gallery h2,
+      .contact h2,
+      .signup h2 {
+        font-size: 1.5rem;
+      }
+
+      .about p,
+      .tutors > p {
+        font-size: 0.9rem;
+      }
+
+      .tutor-card {
+        padding: 12px;
+      }
+
+      .tutor-card img {
+        height: 150px;
+      }
+
+      .gallery-container img {
+        height: 180px;
+      }
+
+      .map-container iframe {
+        height: 300px;
+      }
+    }
+
+    /* Landscape Mode Adjustments */
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero {
+        padding: 20px;
+      }
+
+      .hero .hero-content h1 {
+        font-size: 1.5rem;
+      }
+
+      .hero .hero-image img {
+        max-width: 250px;
+      }
+
+      nav {
+        justify-content: flex-start;
+        padding-top: 60px;
+      }
+
+      nav ul li {
+        margin: 8px 0;
+      }
+    }
+
+    /* Touch Device Optimizations */
+    @media (hover: none) and (pointer: coarse) {
+      .tutor-card:hover {
+        transform: none;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .tutor-card:active {
+        transform: scale(0.98);
+      }
+
+      .gallery-container img:hover {
+        transform: none;
+      }
+
+      nav ul li a:hover {
+        color: white;
+      }
+
+      nav ul li a:active {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
+
+      button:hover,
+      .contact button:hover,
+      .signup button:hover,
+      .tutor-card a:hover {
+        background-color: initial;
+      }
+    }
+
         /* Sign Up Section */
     .signup {
       padding: 50px;

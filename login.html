@@ -206,6 +206,123 @@
       background: #4CAF50;
       color: white;
     }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .auth-card {
+        padding: 30px;
+        max-width: 400px;
+      }
+
+      .auth-card h1 {
+        font-size: 1.8rem;
+      }
+
+      .social-login {
+        gap: 12px;
+      }
+
+      .social-btn {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .auth-container {
+        padding: 20px 15px;
+        min-height: auto;
+        padding-bottom: 40px;
+      }
+
+      .auth-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .auth-card h1 {
+        font-size: 1.6rem;
+      }
+
+      .auth-card .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .logo-center img {
+        width: 70px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group input {
+        padding: 12px;
+        font-size: 0.95rem;
+      }
+
+      .remember-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .btn-login {
+        padding: 14px;
+        font-size: 1rem;
+      }
+
+      .divider {
+        margin: 20px 0;
+      }
+
+      .social-login {
+        gap: 10px;
+      }
+
+      .social-btn {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+
+      .auth-footer {
+        margin-top: 20px;
+      }
+
+      .auth-footer p {
+        font-size: 0.9rem;
+      }
+
+      .user-type-toggle {
+        margin-bottom: 20px;
+      }
+
+      .user-type-toggle button {
+        padding: 10px;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .auth-card {
+        padding: 20px 15px;
+      }
+
+      .auth-card h1 {
+        font-size: 1.4rem;
+      }
+
+      .logo-center img {
+        width: 60px;
+      }
+
+      .btn-login {
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 

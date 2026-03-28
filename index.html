@@ -9,6 +9,9 @@
 </head>
 
 <body>
+  <!-- Mobile Navigation Overlay -->
+  <div class="nav-overlay"></div>
+  
   <header>
     <div class="logo">
       <img src="/assets/36adfee3-7844-4445-ac49-ccd6752ac52a.png" alt="Find My Teacher Logo">
@@ -24,6 +27,11 @@
         <li><a href="register.html">Join as Tutor</a></li>
       </ul>
     </nav>
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
   <!-- Hero Section -->
   <section id="home" class="hero">
@@ -272,17 +280,55 @@
   </footer>
 
   <script>
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const navOverlay = document.querySelector('.nav-overlay');
+    const navLinks = document.querySelectorAll('nav ul li a');
+
+    function toggleMobileNav() {
+      hamburger.classList.toggle('active');
+      nav.classList.toggle('active');
+      navOverlay.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
+    }
+
+    function closeMobileNav() {
+      hamburger.classList.remove('active');
+      nav.classList.remove('active');
+      navOverlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', toggleMobileNav);
+    navOverlay.addEventListener('click', closeMobileNav);
+
+    // Close mobile nav when clicking on a link
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+
+    // Close mobile nav on window resize (when switching to desktop)
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMobileNav();
+      }
+    });
+
     // Smooth Scroll
     function scrollToSection(sectionId) {
       const section = document.getElementById(sectionId);
-      window.scrollTo({
-        top: section.offsetTop,
-        behavior: 'smooth'
-      });
+      if (section) {
+        closeMobileNav();
+        window.scrollTo({
+          top: section.offsetTop,
+          behavior: 'smooth'
+        });
+      }
     }
 
     // Contact Form
-    document.getElementById('contact-form').addEventListener('submit', function (event) {
+    document.getElementById('contact-form')?.addEventListener('submit', function (event) {
       event.preventDefault();
       alert('Thank you for contacting us! Our team will reply soon. Have a great day!');
       this.reset();

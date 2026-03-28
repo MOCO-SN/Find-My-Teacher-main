@@ -125,6 +125,100 @@
       color: #666;
       margin-top: 5px;
     }
+
+    /* Responsive Styles */
+    @media (max-width: 992px) {
+      .auth-card {
+        padding: 30px;
+        max-width: 450px;
+      }
+
+      .auth-card h1 {
+        font-size: 1.8rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .auth-container {
+        padding: 20px 15px;
+        min-height: auto;
+        padding-bottom: 40px;
+      }
+
+      .auth-card {
+        padding: 25px 20px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .auth-card h1 {
+        font-size: 1.5rem;
+      }
+
+      .auth-card .subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+      }
+
+      .logo-center img {
+        width: 70px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        padding: 12px;
+        font-size: 0.95rem;
+      }
+
+      .form-group label {
+        font-size: 0.9rem;
+      }
+
+      .btn-register {
+        padding: 14px;
+        font-size: 1rem;
+      }
+
+      .auth-footer {
+        margin-top: 20px;
+      }
+
+      .auth-footer p {
+        font-size: 0.9rem;
+      }
+
+      .password-requirements {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 375px) {
+      .auth-card {
+        padding: 20px 15px;
+      }
+
+      .auth-card h1 {
+        font-size: 1.3rem;
+      }
+
+      .logo-center img {
+        width: 60px;
+      }
+
+      .btn-register {
+        padding: 12px;
+      }
+    }
   </style>
 </head>
 
